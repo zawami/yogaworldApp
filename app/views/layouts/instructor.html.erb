@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%=stylesheet_link_tag "instructor",media:"all","data-turbolinks-track":true %>
+    <%# <%=stylesheet_pack_tag "instructor",media:"all","data-turbolinks-track":true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%# <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
+    <meta name=“viewport” content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <%= render 'instructor/header'%>
+    <div class="container">
+        <%= yield %>
+        <%= render 'instructor/footer'%>
+    </div>
+  </body>
+</html>
