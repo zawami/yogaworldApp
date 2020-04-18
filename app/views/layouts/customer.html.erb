@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= document_title %></title>
+    <%# <title><%= document_title </title> %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%=stylesheet_link_tag "customer",media:"all","data-turbolinks-track":true %>
-    <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%# <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
+      <meta name=“viewport” content="width=device-width, initial-scale=1">
   </head>
 
   <body>
+    <%= render 'customer/header'%>
+    <div class="container">
         <%= yield %>
-      </div>
+        <%= render 'customer/footer'%>
+    </div>
+  </body>
 </html>

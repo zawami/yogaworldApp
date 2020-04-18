@@ -1,4 +1,4 @@
-class Organizer::TopController < ApplicationController
+class Organizer::TopController < Organizer::Base 
   def index
   end
 end
