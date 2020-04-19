@@ -8,11 +8,13 @@ Rails.application.routes.draw do
   namespace :organizer do
     root 'top#index'
     get '/signup',to:'org_users#new'
+    resources :org_users
   end
 
   namespace :customer do
     root 'top#index'
     get '/signup',to:'users#new'
+    resources :users
   end
 
 end
