@@ -4,5 +4,6 @@ class Organizer::OrgUsersController < Organizer::Base
   end
 
   def new
+    @org_user = OrgUser.new
   end
 end

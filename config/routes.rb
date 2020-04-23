@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   namespace :instructor do
     root 'top#index'
     get '/signup',to:'ir_users#new'
+    post '/signup', to:'ir_users#create'
     resources :ir_users
   end
 
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
   namespace :customer do
     root 'top#index'
     get '/signup',to:'users#new'
+    post '/signup', to:'users#create'
     resources :users
   end
 
