@@ -14,9 +14,12 @@
   <body>
     <%= render 'organizer/header'%>
     <div class="container">
-        <%= yield %>
-        <%= render 'organizer/footer'%>
-        <%= debug(params) if Rails.env.development? %>
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+      <%= yield %>
+      <%= render 'organizer/footer'%>
+      <%= debug(params) if Rails.env.development? %>
     </div>
   </body>
 </html>

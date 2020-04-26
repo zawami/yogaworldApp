@@ -14,7 +14,7 @@ class Instructor::IrUsersController < Instructor::Base
       flash[:success] = "Welcomt to the YOGAWORLD!"
       redirect_to instructor_ir_user_url(@ir_user)
     else
-      redirect_to instructor_root
+      render 'new'
     end
   end
 
