@@ -10,6 +10,7 @@ class Customer::UsersController < Customer::Base
   def create
     @user = User.new(user_params)
     if @user.save
+      log_in @user
       flash[:success] = "Welcomt to the YOGAWORLD!"
       redirect_to customer_user_url(@user)
     else

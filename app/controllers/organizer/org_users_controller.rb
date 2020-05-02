@@ -10,6 +10,7 @@ class Organizer::OrgUsersController < Organizer::Base
   def create
     @org_user = OrgUser.new(org_user_params)
     if @org_user.save
+      log_in @org_user
       flash[:success] = "Welcomt to the YOGAWORLD!"
       redirect_to organizer_org_user_url(@org_user)
     else

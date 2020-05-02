@@ -11,6 +11,7 @@ class Instructor::IrUsersController < Instructor::Base
   def create
     @ir_user = IrUser.new(ir_user_params)
     if @ir_user.save
+      log_in @ir_users
       flash[:success] = "Welcomt to the YOGAWORLD!"
       redirect_to instructor_ir_user_url(@ir_user)
     else
