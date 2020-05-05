@@ -3,6 +3,10 @@ module Instructor::SessionsHelper
     session[:ir_user_id] = ir_user.id
   end
 
+  def ir_current_user?(ir_user)
+    ir_user == ir_current_user
+  end
+
   def ir_current_user
     if session[:ir_user_id]
       @ir_current_user ||= IrUser.find_by(id: session[:ir_user_id])

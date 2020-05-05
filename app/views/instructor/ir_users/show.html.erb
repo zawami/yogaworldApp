@@ -1,1 +1,36 @@
-<%= @ir_user.name %>, <%= @ir_user.email %>,<%= @ir_user.created_at%>
+<% provide(:title, 'Profile') %>
+<h1>Profile</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="form-group">
+      <label>name:</label>
+      <%= @ir_user.name %>
+    </div>
+
+    <div class="form-group">
+      <label>email:</label>
+       <%= @ir_user.email %>
+    </div>
+
+    <div class="form-group">
+      <label>introduction:</label>
+      <p><%= @ir_user.introduction %></p>
+    </div>
+
+    <div class="form-group">
+      <label>capabilities: </label>
+      <%= @ir_user.capabilities %>
+    </div>
+
+    <div class="form-group">
+      <label>career: </label>
+      <%= @ir_user.career %>
+    </div>
+
+    <div class="form-group">
+      <label>image: </label>
+      <%= @ir_user.image %>
+    </div>
+
+  </div>
+</div>

@@ -13,7 +13,7 @@
             </a>
             <ul class="dropdown-menu">
               <li><%= link_to "Profile",instructor_ir_user_path(ir_current_user) %></li>
-              <li><%= link_to "Settings",'#' %></li>
+              <li><%= link_to "Settings",edit_instructor_ir_user_path(ir_current_user) %></li>
               <li class="divider"></li>
               <li>
                 <%= link_to "Log out",instructor_logout_path, method: :delete %>
