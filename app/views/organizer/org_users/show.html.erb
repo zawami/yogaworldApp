@@ -1,1 +1,31 @@
-<%= @org_user.name %>, <%= @org_user.email %>
+<% provide(:title, 'Profile') %>
+<h1>Profile</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="form-group">
+      <label>name:</label>
+      <%= @org_user.name %>
+    </div>
+
+    <div class="form-group">
+      <label>email:</label>
+       <%= @org_user.email %>
+    </div>
+
+    <div class="form-group">
+      <label>overview:</label>
+      <p><%= @org_user.introduction %></p>
+    </div>
+
+    <div class="form-group">
+      <label>comment: </label>
+      <%= @org_user.comment %>
+    </div>
+
+    <div class="form-group">
+      <label>image: </label>
+      <%= @org_user.image %>
+    </div>
+
+  </div>
+</div>

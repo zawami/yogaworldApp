@@ -3,6 +3,10 @@ module Organizer::SessionsHelper
     session[:org_user_id] = org_user.id
   end
 
+  def org_current_user?(org_user)
+    org_user == org_current_user
+  end
+
   def org_current_user
     if session[:org_user_id]
       @org_current_user ||= OrgUser.find_by(id: session[:org_user_id])
