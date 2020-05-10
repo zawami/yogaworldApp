@@ -1,0 +1,35 @@
+<% provide(:title, 'Event') %>
+<h1>Event create</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@event, url: organizer_event_path) do |f| %>
+     
+      <%= f.label :eventname %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :eventdate %>
+      <%= f.date_field :date , class: 'form-control' %>
+
+      <%= f.label :place %>
+      <%= f.text_field :place, class: 'form-control' %>
+
+      <%= f.label :application_period　%>
+      <%= f.date_field :term, class: 'form-control' %>    
+      
+      <%= f.label :fee %>
+      <%= f.number_field :fee, class: 'form-control' %>
+
+      <%= f.label :explanation %>
+      <%= f.text_area :explanation, class: 'form-control' %>  
+
+      <%= f.label :comment_for_instructor %>
+      <%= f.text_area :comment, class: 'form-control' %> 
+
+      <%= f.label :comment_for_User %>
+      <%= f.text_area :comment2, class: 'form-control' %> 
+
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

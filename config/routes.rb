@@ -16,7 +16,11 @@ Rails.application.routes.draw do
     get '/login', to: 'sessions#new'
     post '/login', to: 'sessions#create'
     delete '/logout', to: 'sessions#destroy'
+    get '/event', to: 'events#new'
+    post '/event', to: 'events#create'
+    get '/event/:id', to: 'events#show'
     resources :org_users
+    resources :events
   end
 
   namespace :customer do

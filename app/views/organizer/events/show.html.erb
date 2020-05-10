@@ -1,0 +1,46 @@
+<% provide(:title, @event.name) %>
+<h1>イベント</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="form-group">
+      <label>name:</label>
+      <%= @event.name %>
+    </div>
+
+    <div class="form-group">
+      <label>date:</label>
+       <%= @event.date %>
+    </div>
+
+    <div class="form-group">
+      <label>place:</label>
+      <p><%= @event.place %></p>
+    </div>
+
+    <div class="form-group">
+      <label>term: </label>
+      <%= @event.term %>
+    </div>
+
+    <div class="form-group">
+      <label>fee: </label>
+      <%= @event.fee %>
+    </div>
+
+    <div class="form-group">
+      <label>explanation: </label>
+      <%= @event.explanation %>
+    </div>
+
+    <div class="form-group">
+      <label>comment_for_Instructor: </label>
+      <%= @event.comment %>
+    </div>
+
+     <div class="form-group">
+      <label>comment: </label>
+      <%= @event.comment2 %>
+    </div>
+
+  </div>
+</div>

@@ -6,7 +6,7 @@
         <li><%= link_to "Home",'#' %></li>
         <li><%= link_to "Help",'#' %></li>
         <% if org_logged_in? %>
-          <li><%= link_to "Event",'#' %></li>
+          <li><%= link_to "Event",organizer_events_path %></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               Account <b class="caret"></b>
