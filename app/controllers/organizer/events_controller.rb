@@ -1,6 +1,6 @@
 class Organizer::EventsController < Organizer::Base
   def index
-    @events = Event.all
+    @events = Event.where(org_user_id: org_current_user.id) 
   end
 
   def new
@@ -8,7 +8,7 @@ class Organizer::EventsController < Organizer::Base
   end
 
   def create
-    @event = Event.new(event_params)
+    @event = org_current_user.events.new(event_params)
     if @event.save
       flash[:success] = 'Create Event'
       redirect_to organizer_events_url
@@ -19,6 +19,11 @@ class Organizer::EventsController < Organizer::Base
 
   def show
     @event = Event.find(params[:id])
+  end
+
+  def confirm
+    @event = Event.find(params[:id])
+    @applys = Apply.where(event_id: @event.id)
   end
 end
 

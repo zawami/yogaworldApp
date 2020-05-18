@@ -1,10 +1,12 @@
 <% provide(:title, 'Events') %>
-<h1>ALL Events</h1>
+<h1>Event list</h1>
 
 <%= link_to "Create Event",organizer_event_path, class: "btn btn-primary" %>
 
-<ul>
+
 <% @events.each do |event| %>
-  <%= link_to event.name,organizer_path(event) %>
+  <ul>
+    <%= link_to event.name,organizer_path(event) %>
+    <%= link_to "応募あり",organizer_confirm_path(event),class:"btn btn-primary"%>
+  </ul>
 <% end %>
-</ul>

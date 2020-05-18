@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   namespace :instructor do
     root 'top#index'
     get '/signup',to:'ir_users#new'
@@ -6,7 +7,9 @@ Rails.application.routes.draw do
     get '/login', to:'sessions#new'
     post '/login', to:'sessions#create'
     delete '/logout', to:'sessions#destroy'
+    post '/applys', to: 'applys#create'
     resources :ir_users
+    resources :applys
   end
 
   namespace :organizer do
@@ -19,6 +22,7 @@ Rails.application.routes.draw do
     get '/event', to: 'events#new'
     post '/event', to: 'events#create'
     get '/event/:id', to: 'events#show'
+    get '/confirm/:id', to: 'events#confirm',as: 'confirm'
     resources :org_users
     resources :events
   end

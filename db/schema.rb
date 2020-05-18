@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_09_073543) do
+ActiveRecord::Schema.define(version: 2020_05_10_141219) do
+
+  create_table "applies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "event_id"
+    t.bigint "ir_user_id"
+    t.boolean "flag"
+    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_applies_on_event_id"
+    t.index ["ir_user_id"], name: "index_applies_on_ir_user_id"
+  end
 
   create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -24,6 +35,8 @@ ActiveRecord::Schema.define(version: 2020_05_09_073543) do
     t.boolean "disclosed_page", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "org_user_id"
+    t.index ["org_user_id"], name: "index_events_on_org_user_id"
   end
 
   create_table "ir_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -58,4 +71,7 @@ ActiveRecord::Schema.define(version: 2020_05_09_073543) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "applies", "events"
+  add_foreign_key "applies", "ir_users"
+  add_foreign_key "events", "org_users"
 end

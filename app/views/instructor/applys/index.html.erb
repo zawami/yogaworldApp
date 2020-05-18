@@ -1,0 +1,8 @@
+<% provide(:title, 'Events') %>
+<h1>ALL Events</h1>
+
+<ul>
+<% @events.each do |event| %>
+  <%= link_to event.name,instructor_apply_path(event) %>
+<% end %>
+</ul>

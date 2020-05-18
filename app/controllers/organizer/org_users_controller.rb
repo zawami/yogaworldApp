@@ -1,9 +1,10 @@
-class Organizer::OrgUsersController < Organizer::Base
-  before_action :logged_in_user, only: [:edit,:update]
-  before_action :correct_user, only: [:edit,:update]
+# before_action :logged_in_user, only: [:edit,:update]
+# before_action :correct_user, only: [:edit,:update]
 
+class Organizer::OrgUsersController < Organizer::Base
   def show
     @org_user = OrgUser.find(params[:id])
+    # @events =  @org_user.events.paginate(page: params[:page])
   end
 
   def new

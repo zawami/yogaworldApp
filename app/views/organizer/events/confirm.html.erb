@@ -1,0 +1,12 @@
+<% provide(:title, @event.name) %>
+<h1>応募一覧</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+  <% @applys.each do |apply| %>
+    <ul>
+      <%= link_to apply.ir_user_id,instructor_ir_user_path(apply) %>
+      <%= link_to "承認",'#',class:"btn btn-primary"%>
+    </ul>
+  <% end %>
+  </div>
+</div>

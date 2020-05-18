@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  event: one
+  ir_user: one
+  flag: false
+  comment: MyText
+
+two:
+  event: two
+  ir_user: two
+  flag: false
+  comment: MyText
