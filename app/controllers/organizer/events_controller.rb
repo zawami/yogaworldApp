@@ -21,10 +21,23 @@ class Organizer::EventsController < Organizer::Base
     @event = Event.find(params[:id])
   end
 
-  def confirm
+  def index2
     @event = Event.find(params[:id])
     @applys = Apply.where(event_id: @event.id)
   end
+
+  def confirm
+    @event = Event.find(params[:event_id])
+    @apply = Apply.find(params[:apply_id])    
+    if @apply.update_attribute(:c_flag,true)
+      @event.update_attribute(:disclosed_page,true)
+    flash[:success] = "承認しました"
+    redirect_to organizer_confirm_path(@event)
+    else
+      render index2
+    end
+  end
+
 end
 
 private

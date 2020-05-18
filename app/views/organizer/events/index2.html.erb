@@ -5,7 +5,7 @@
   <% @applys.each do |apply| %>
     <ul>
       <%= link_to apply.ir_user_id,instructor_ir_user_path(apply) %>
-      <%= link_to "承認",'#',class:"btn btn-primary"%>
+      <%= link_to "承認",organizer_confirm_path(event_id: @event.id,apply_id: apply.id),method: :patch,class:"btn btn-primary"%>
     </ul>
   <% end %>
   </div>

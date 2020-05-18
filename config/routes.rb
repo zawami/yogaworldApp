@@ -22,7 +22,8 @@ Rails.application.routes.draw do
     get '/event', to: 'events#new'
     post '/event', to: 'events#create'
     get '/event/:id', to: 'events#show'
-    get '/confirm/:id', to: 'events#confirm',as: 'confirm'
+    get '/confirm/:id', to: 'events#index2',as: 'confirm'
+    patch '/confirm/:id', to: 'events#confirm'
     resources :org_users
     resources :events
   end
